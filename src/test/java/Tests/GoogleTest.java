@@ -19,7 +19,7 @@ public class GoogleTest {
     RemoteWebDriver driver;
     DesiredCapabilities dc;
     public static String GRID_URL = "http://localhost:4444/wd/hub";
-    public static String APPLICATION_URL = "http://google.com";
+    public static String APPLICATION_URL = "https://opensource.zalando.com/zalenium/";
 
     @BeforeTest
     @Parameters("browser")
@@ -40,10 +40,19 @@ public class GoogleTest {
     }
 
     @Test
-    void googleTest() {
-        driver.findElement(By.xpath("//span[contains(text(),'Приемам')]")).click();
-        driver.findElement(By.xpath("//input[@title='Търсене']")).sendKeys("Zalenium");
-        driver.findElement(By.xpath("//div[@jsname='VlcLAe']//input[@value='Google Търсене']")).click();
+    void googleTest() throws InterruptedException {
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//a[@href='#why']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[@href='#try-it']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[@href='#features']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[@href='#docker']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[@href='#docker-swarm']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[@href='#kubernetes']")).click();
     }
 
     @AfterTest
