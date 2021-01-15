@@ -31,6 +31,7 @@ public class GoogleTest {
             dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
         }
         dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
+        dc.setCapability("name", "googleTest");
 
         URL url = new URL(GRID_URL);
 
